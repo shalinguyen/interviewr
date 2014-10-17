@@ -160,6 +160,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Today's Interview" id="80c-rw-Kbf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="linksLabel" destination="WZ0-kD-pFr" id="bYJ-OJ-cqt"/>
+                        <outlet property="locationLabel" destination="nD1-Yu-fE9" id="3w3-vw-a0t"/>
+                        <outlet property="nameLabel" destination="JXE-AW-YcH" id="JAI-cw-iwy"/>
+                        <outlet property="notesLabel" destination="dIo-xP-KZz" id="YC7-lE-Vrl"/>
+                        <outlet property="photoView" destination="PXD-Ob-Rgo" id="RAX-fg-Lo9"/>
+                        <outlet property="positionLabel" destination="3Il-9N-kKu" id="21C-xs-CL2"/>
+                        <outlet property="timeLabel" destination="WlI-pZ-ybu" id="2D2-0k-Byo"/>
+                        <outlet property="titleLabel" destination="tGB-19-FMx" id="Uff-wb-stk"/>
+                        <outlet property="topicLabel" destination="pHf-ze-i9J" id="Slk-wx-xvg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
