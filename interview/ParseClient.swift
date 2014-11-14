@@ -62,7 +62,7 @@ class ParseClient {
     
     class func getNotesByInterview(interview: Interview, success: [Note] -> (), failure: (NSError -> ())? = nil) {
         let query = PFQuery(className: "Note")
-        query.whereKey("interview", equalTo: interview.id)
+        query.whereKey("interview", containedIn: [interview.pfObject])
         query.findObjectsInBackgroundWithBlock { (objs: [AnyObject]!, error: NSError!) -> Void in
             self.handleObjectResponse(objs, error: error, success: success, failure: failure) {Note(parseObject: $0 as PFObject)}
         }

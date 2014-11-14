@@ -10,12 +10,13 @@ import UIKit
 
 class Note: NSObject {
     
-    var content: String
-    var dateCreated: NSDate
+    var content: String {return pfObject.objectForKey("content") as String}
+    var dateCreated: NSDate {return pfObject.createdAt}
     //var createdBy: User
     
+    var pfObject: PFObject
+    
     init(parseObject: PFObject) {
-        content = parseObject.objectForKey("content") as String
-        dateCreated = parseObject.createdAt as NSDate
+        pfObject = parseObject
     }
 }
