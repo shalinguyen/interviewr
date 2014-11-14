@@ -19,6 +19,8 @@ class User: NSObject {
     var lastName: String
     var email: String
     
+    var name: String {return "\(firstName) \(lastName)"}
+    
     var dictionary: NSDictionary //For serializing to local storage
     
     init(parseObject: PFObject) {

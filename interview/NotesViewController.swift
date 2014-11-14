@@ -38,7 +38,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier("NotesCell") as NotesCell
         cell.dateCreatedLabel.text = Util.formatDateNormal(note.dateCreated)
         cell.titleLabel.text = note.content
-        cell.createdByLabel.text = "wefijwo"
+        cell.createdByLabel.text = note.createdBy.name
         return cell
     }
     
