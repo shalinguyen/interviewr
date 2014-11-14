@@ -141,7 +141,7 @@
         <!--Upcoming Interviews-->
         <scene sceneID="5SB-Rd-OCX">
             <objects>
-                <viewController id="jys-qk-itn" sceneMemberID="viewController">
+                <viewController id="jys-qk-itn" customClass="UpcomingInterviewsViewController" customModule="interview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hXO-qt-fxr"/>
                         <viewControllerLayoutGuide type="bottom" id="tT0-77-dhs"/>
@@ -154,7 +154,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Cym-qN-jCg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterviewCell" rowHeight="95" id="Cym-qN-jCg" customClass="InterviewCell" customModule="interview" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cym-qN-jCg" id="09T-oe-pQU">
@@ -183,6 +183,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="candidateNameLabel" destination="doD-WT-UpJ" id="2oT-gu-jRq"/>
+                                            <outlet property="dateLabel" destination="v4I-39-3Ou" id="NVR-kw-hql"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -197,6 +201,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="enh-3q-uto" id="ukh-Uq-t6b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1d-qo-ncv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -362,7 +369,7 @@
                     <navigationItem key="navigationItem" title="Today's Interview" id="80c-rw-Kbf">
                         <barButtonItem key="rightBarButtonItem" title="Schedule" id="UTe-fh-AKl">
                             <connections>
-                                <segue destination="Kby-P2-XFn" kind="show" id="6EE-LL-2cJ"/>
+                                <segue destination="Kby-P2-XFn" kind="show" identifier="schedule" id="6EE-LL-2cJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

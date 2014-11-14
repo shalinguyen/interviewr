@@ -50,12 +50,24 @@ class ParseClient {
     
     class func getNextInterview(success: Interview! -> (), failure: (NSError -> ())? = nil) {
         let query = PFQuery(className: "Interview")
-        query.whereKey("interviewer", containedIn: [PFUser(withoutDataWithObjectId: User.current.pfObject.objectId)])
         query.includeKey("candidate")
         query.includeKey("jobDescription")
-        //TODO Get next upcoming interview for today instead of first object
+        query.whereKey("interviewer", containedIn: [PFUser(withoutDataWithObjectId: User.current.pfObject.objectId)])
+        query.whereKey("startDate", greaterThan: NSDate())
+        query.orderByAscending("startDate")
         query.getFirstObjectInBackgroundWithBlock { (obj: PFObject!, error: NSError!) -> () in
             self.handleObjectResponse(obj, error: error, success: success, failure: failure) {Interview(parseObject: $0)}
+        }
+    }
+    
+    class func getUpcomingInterviews(success: [Interview] -> (), failure: (NSError -> ())? = nil) {
+        let query = PFQuery(className: "Interview")
+        query.includeKey("candidate")
+        query.whereKey("interviewer", containedIn: [PFUser(withoutDataWithObjectId: User.current.pfObject.objectId)])
+        query.whereKey("startDate", greaterThan: NSDate())
+        query.orderByAscending("startDate")
+        query.findObjectsInBackgroundWithBlock { (objs: [AnyObject]!, error: NSError!) -> Void in
+            self.handleObjectResponse(objs, error: error, success: success, failure: failure) {Interview(parseObject: $0 as PFObject)}
         }
     }
     
@@ -76,8 +88,8 @@ class ParseClient {
     
     class func getNotesByInterview(interview: Interview, success: [Note] -> (), failure: (NSError -> ())? = nil) {
         let query = PFQuery(className: "Note")
-        query.whereKey("interview", containedIn: [interview.pfObject])
         query.includeKey("createdBy")
+        query.whereKey("interview", containedIn: [interview.pfObject])
         query.findObjectsInBackgroundWithBlock { (objs: [AnyObject]!, error: NSError!) -> Void in
             self.handleObjectResponse(objs, error: error, success: success, failure: failure) {Note(parseObject: $0 as PFObject)}
         }

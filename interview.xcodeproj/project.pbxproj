@@ -20,6 +20,8 @@
 		5E50F4E31A15EAEB00BBE616 /* JobDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E21A15EAEB00BBE616 /* JobDescription.swift */; };
 		5E50F4E51A15F40F00BBE616 /* JobDescriptionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E41A15F40F00BBE616 /* JobDescriptionEditViewController.swift */; };
 		5E50F4E71A15FF3800BBE616 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E61A15FF3800BBE616 /* Candidate.swift */; };
+		5E50F4E91A16067800BBE616 /* InterviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E81A16067800BBE616 /* InterviewCell.swift */; };
+		5E50F4ED1A16075300BBE616 /* UpcomingInterviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4EC1A16075300BBE616 /* UpcomingInterviewsViewController.swift */; };
 		F2F38F821A15A9A50088C68B /* PhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F38F811A15A9A50088C68B /* PhotosController.swift */; };
 		F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793C19E7A4FA0054E757 /* AppDelegate.swift */; };
 		F751793F19E7A4FA0054E757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793E19E7A4FA0054E757 /* ViewController.swift */; };
@@ -53,6 +55,8 @@
 		5E50F4E21A15EAEB00BBE616 /* JobDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDescription.swift; sourceTree = "<group>"; };
 		5E50F4E41A15F40F00BBE616 /* JobDescriptionEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDescriptionEditViewController.swift; sourceTree = "<group>"; };
 		5E50F4E61A15FF3800BBE616 /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		5E50F4E81A16067800BBE616 /* InterviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterviewCell.swift; sourceTree = "<group>"; };
+		5E50F4EC1A16075300BBE616 /* UpcomingInterviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingInterviewsViewController.swift; sourceTree = "<group>"; };
 		6D3DE2A045B5411D89E40B37 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DA8C94DF5F717C3073F47A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CA2127F31F1DC162303FF1DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			children = (
 				5E3DE4A71A1561E500858AAC /* NotesCell.swift */,
 				F2F38F811A15A9A50088C68B /* PhotosController.swift */,
+				5E50F4E81A16067800BBE616 /* InterviewCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				5E50F4DE1A15D44500BBE616 /* NoteEditViewController.swift */,
 				5E50F4E01A15E90800BBE616 /* JobDescriptionViewController.swift */,
 				5E50F4E41A15F40F00BBE616 /* JobDescriptionEditViewController.swift */,
+				5E50F4EC1A16075300BBE616 /* UpcomingInterviewsViewController.swift */,
 			);
 			path = interview;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				5E50F4E51A15F40F00BBE616 /* JobDescriptionEditViewController.swift in Sources */,
 				5E013E5F1A15B7C90095434B /* Util.swift in Sources */,
 				5E50F4E71A15FF3800BBE616 /* Candidate.swift in Sources */,
+				5E50F4ED1A16075300BBE616 /* UpcomingInterviewsViewController.swift in Sources */,
 				5E3DE4A61A15610900858AAC /* NotesViewController.swift in Sources */,
 				5E3DE4AB1A15642700858AAC /* Note.swift in Sources */,
 				F2F38F821A15A9A50088C68B /* PhotosController.swift in Sources */,
@@ -347,6 +354,7 @@
 				5E3DE4AF1A15666F00858AAC /* User.swift in Sources */,
 				5E3DE4A81A1561E500858AAC /* NotesCell.swift in Sources */,
 				5E415BA419F0E7C60059A7E9 /* ParseClient.swift in Sources */,
+				5E50F4E91A16067800BBE616 /* InterviewCell.swift in Sources */,
 				5E50F4DF1A15D44500BBE616 /* NoteEditViewController.swift in Sources */,
 				5E50F4E31A15EAEB00BBE616 /* JobDescription.swift in Sources */,
 				5E415BA219F0DD8A0059A7E9 /* Interview.swift in Sources */,
