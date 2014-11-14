@@ -282,25 +282,6 @@ Candidate has a codepen or github account (or similar) with active projects</str
             </objects>
             <point key="canvasLocation" x="2615" y="-36"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="T0Y-Dg-JX6">
-            <objects>
-                <viewController id="9Gn-Yz-3rV" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vH7-jI-5JV"/>
-                        <viewControllerLayoutGuide type="bottom" id="LdM-f0-Blr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2aD-z4-oyC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QMr-dC-hYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="990.5" y="-682.5"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="VgA-qJ-1IR">
             <objects>
@@ -511,7 +492,7 @@ Candidate has a codepen or github account (or similar) with active projects</str
         <!--Notes-->
         <scene sceneID="nCz-7d-Atw">
             <objects>
-                <viewController id="vn5-fK-0gV" sceneMemberID="viewController">
+                <viewController id="vn5-fK-0gV" customClass="NotesViewController" customModule="interview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pKU-Qu-AhS"/>
                         <viewControllerLayoutGuide type="bottom" id="mvX-FB-5Gx"/>
@@ -524,7 +505,7 @@ Candidate has a codepen or github account (or similar) with active projects</str
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="0li-GW-Spk">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotesCell" rowHeight="97" id="0li-GW-Spk" customClass="NotesCell" customModule="interview" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="414" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0li-GW-Spk" id="hHc-Mj-CWA">
@@ -550,6 +531,11 @@ Candidate has a codepen or github account (or similar) with active projects</str
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="createdByLabel" destination="B3s-J2-L9L" id="6dd-iw-b0X"/>
+                                            <outlet property="dateCreatedLabel" destination="aYT-JC-P9u" id="Hrh-bN-dHw"/>
+                                            <outlet property="titleLabel" destination="sRo-Kc-Vnq" id="Gvs-gg-GwC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -564,6 +550,9 @@ Candidate has a codepen or github account (or similar) with active projects</str
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="mm0-Bh-2QN" id="Qx9-h4-Fx8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8k-2H-oyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

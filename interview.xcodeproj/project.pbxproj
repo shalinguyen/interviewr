@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0C19CA7EDAE7430C9211A1AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3DE2A045B5411D89E40B37 /* libPods.a */; };
+		5E3DE4A61A15610900858AAC /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DE4A51A15610900858AAC /* NotesViewController.swift */; };
+		5E3DE4A81A1561E500858AAC /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DE4A71A1561E500858AAC /* NotesCell.swift */; };
+		5E3DE4AB1A15642700858AAC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DE4AA1A15642700858AAC /* Note.swift */; };
+		5E3DE4AF1A15666F00858AAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DE4AE1A15666F00858AAC /* User.swift */; };
 		5E415BA219F0DD8A0059A7E9 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E415BA119F0DD8A0059A7E9 /* Interview.swift */; };
 		5E415BA419F0E7C60059A7E9 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E415BA319F0E7C60059A7E9 /* ParseClient.swift */; };
 		F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793C19E7A4FA0054E757 /* AppDelegate.swift */; };
@@ -30,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		38AEAD85984D457FAC0F1545 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		5E3DE4A51A15610900858AAC /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		5E3DE4A71A1561E500858AAC /* NotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
+		5E3DE4AA1A15642700858AAC /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		5E3DE4AE1A15666F00858AAC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5E415B9D19F0D1990059A7E9 /* interview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "interview-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E415BA119F0DD8A0059A7E9 /* Interview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
 		5E415BA319F0E7C60059A7E9 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
@@ -73,11 +81,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5E3DE4A91A1561F100858AAC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				5E3DE4A71A1561E500858AAC /* NotesCell.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		5E415BA019F0DD4C0059A7E9 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				5E3DE4AA1A15642700858AAC /* Note.swift */,
 				5E415BA119F0DD8A0059A7E9 /* Interview.swift */,
 				5E415BA319F0E7C60059A7E9 /* ParseClient.swift */,
+				5E3DE4AE1A15666F00858AAC /* User.swift */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -113,6 +131,8 @@
 				F751794519E7A4FA0054E757 /* LaunchScreen.xib */,
 				F751793A19E7A4FA0054E757 /* Supporting Files */,
 				5E415B9D19F0D1990059A7E9 /* interview-Bridging-Header.h */,
+				5E3DE4A51A15610900858AAC /* NotesViewController.swift */,
+				5E3DE4A91A1561F100858AAC /* views */,
 			);
 			path = interview;
 			sourceTree = "<group>";
@@ -278,7 +298,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F751793F19E7A4FA0054E757 /* ViewController.swift in Sources */,
+				5E3DE4A61A15610900858AAC /* NotesViewController.swift in Sources */,
+				5E3DE4AB1A15642700858AAC /* Note.swift in Sources */,
 				F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */,
+				5E3DE4AF1A15666F00858AAC /* User.swift in Sources */,
+				5E3DE4A81A1561E500858AAC /* NotesCell.swift in Sources */,
 				5E415BA419F0E7C60059A7E9 /* ParseClient.swift in Sources */,
 				5E415BA219F0DD8A0059A7E9 /* Interview.swift in Sources */,
 			);

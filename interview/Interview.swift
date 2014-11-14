@@ -18,7 +18,7 @@ class Interview: NSObject {
     var endDate: NSDate
     var location: String?
     
-    init(parseObject: PFObject!) {
+    init(parseObject: PFObject) {
         intervieweeName = parseObject.objectForKey("intervieweeName") as String
         linkedinUrl = parseObject.objectForKey("linkedinUrl") as? String
         position = parseObject.objectForKey("position") as String
