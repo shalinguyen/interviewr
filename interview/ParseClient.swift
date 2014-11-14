@@ -87,4 +87,10 @@ class ParseClient {
             self.handleSaveResponse(successful, error: error, success: success, failure: failure)
         }
     }
+    
+    class func saveJobDescription(jobDescription: JobDescription, success: () -> (), failure: (NSError -> ())? = nil) {
+        jobDescription.pfObject.saveInBackgroundWithBlock { (successful: Bool, error: NSError!) -> Void in
+            self.handleSaveResponse(successful, error: error, success: success, failure: failure)
+        }
+    }
 }

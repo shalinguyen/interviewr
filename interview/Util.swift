@@ -13,4 +13,8 @@ class Util: NSObject {
     class func formatDateNormal(date: NSDate) -> String {
         return "\(date)"
     }
+    
+    class func nextViewController(segue: UIStoryboardSegue) -> AnyObject {
+        return (segue.destinationViewController as UINavigationController).childViewControllers[0]
+    }
 }

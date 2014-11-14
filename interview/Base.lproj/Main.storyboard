@@ -438,7 +438,7 @@ Candidate has a codepen or github account (or similar) with active projects</str
                     <navigationItem key="navigationItem" title="Job Description" id="8PZ-Th-n5t">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Eya-SW-4lj">
                             <connections>
-                                <segue destination="l6p-Xk-I9j" kind="presentation" id="QcN-IW-RrB"/>
+                                <segue destination="l6p-Xk-I9j" kind="presentation" identifier="editJobDescription" id="QcN-IW-RrB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -456,7 +456,7 @@ Candidate has a codepen or github account (or similar) with active projects</str
         <!--Edit Job Description-->
         <scene sceneID="FRX-UW-Uy6">
             <objects>
-                <viewController id="NR9-fS-Rk9" sceneMemberID="viewController">
+                <viewController id="NR9-fS-Rk9" customClass="JobDescriptionEditViewController" customModule="interview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dUO-gf-RbZ"/>
                         <viewControllerLayoutGuide type="bottom" id="jZ6-4g-4ep"/>
@@ -483,9 +483,22 @@ Candidate has a codepen or github account (or similar) with active projects</str
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Job Description" id="bsK-gv-w7b">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="07W-RP-pkH"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="WXG-Vy-vqW">
+                            <connections>
+                                <action selector="onTouchCancel:" destination="NR9-fS-Rk9" id="pat-oR-aly"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="07W-RP-pkH">
+                            <connections>
+                                <action selector="onTouchSave:" destination="NR9-fS-Rk9" id="yih-tC-f0s"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descriptionField" destination="4j5-EJ-JFh" id="2XI-3q-J0E"/>
+                        <outlet property="titleField" destination="H9Y-Lm-AZ1" id="YDj-q4-TO3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pU-CQ-uiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
