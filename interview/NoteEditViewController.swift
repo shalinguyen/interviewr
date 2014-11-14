@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
+import MobileCoreServices
 
-class NoteEditViewController: UIViewController {
+class NoteEditViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     var interview: Interview!
     
+    @IBOutlet weak var cameraView: UIImageView!
     @IBOutlet weak var contentField: UITextField!
     
     override func viewDidLoad() {
@@ -36,6 +39,60 @@ class NoteEditViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
+    }
+    
+    
+    @IBAction func takePhoto(sender: AnyObject) {
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
+            var picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            var mediaTypes: Array<AnyObject> = [kUTTypeImage]
+            picker.mediaTypes = mediaTypes
+            picker.allowsEditing = true
+            self.presentViewController(picker, animated: true, completion: nil)
+            
+            
+        }
+        else{
+            NSLog("No Camera.")
+        }
+    }
+    
+    // MARK: - Delegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: NSDictionary!) {
+        NSLog("Did Finish Picking")
+        let mediaType = info[UIImagePickerControllerMediaType] as String
+        var originalImage:UIImage?, editedImage:UIImage?, imageToSave:UIImage?
+        
+        // Handle a still image capture
+        let compResult:CFComparisonResult = CFStringCompare(mediaType as NSString!, kUTTypeImage, CFStringCompareFlags.CompareCaseInsensitive)
+        if ( compResult == CFComparisonResult.CompareEqualTo ) {
+            
+            editedImage = info[UIImagePickerControllerEditedImage] as UIImage?
+            originalImage = info[UIImagePickerControllerOriginalImage] as UIImage?
+            
+            if ( editedImage == nil ) {
+                imageToSave = editedImage
+            } else {
+                imageToSave = originalImage
+            }
+            NSLog("Write To Saved Photos")
+            cameraView.image = imageToSave
+            cameraView.reloadInputViews()
+            
+            // Save the new image (original or edited) to the Camera Roll
+            UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil)
+            
+        }
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 
     /*
