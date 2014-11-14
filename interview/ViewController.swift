@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PFLogInViewControllerDelegate {
 
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var topicLabel: UILabel!
@@ -32,6 +32,14 @@ class ViewController: UIViewController {
             self.locationLabel.text = interview.location
             self.nameLabel.text = interview.intervieweeName
         }
+        
+        // TODO organize this and display it only when a
+        // button is pressed
+        var logInViewController = PFLogInViewController()
+        logInViewController.delegate = self
+        presentViewController(logInViewController, animated: true, completion: nil)
+        
+
     }
 
     override func didReceiveMemoryWarning() {
