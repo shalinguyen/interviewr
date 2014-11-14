@@ -16,6 +16,8 @@
 		5E415BA219F0DD8A0059A7E9 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E415BA119F0DD8A0059A7E9 /* Interview.swift */; };
 		5E415BA419F0E7C60059A7E9 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E415BA319F0E7C60059A7E9 /* ParseClient.swift */; };
 		5E50F4DF1A15D44500BBE616 /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4DE1A15D44500BBE616 /* NoteEditViewController.swift */; };
+		5E50F4E11A15E90800BBE616 /* JobDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E01A15E90800BBE616 /* JobDescriptionViewController.swift */; };
+		5E50F4E31A15EAEB00BBE616 /* JobDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E21A15EAEB00BBE616 /* JobDescription.swift */; };
 		F2F38F821A15A9A50088C68B /* PhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F38F811A15A9A50088C68B /* PhotosController.swift */; };
 		F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793C19E7A4FA0054E757 /* AppDelegate.swift */; };
 		F751793F19E7A4FA0054E757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793E19E7A4FA0054E757 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 		5E415BA119F0DD8A0059A7E9 /* Interview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
 		5E415BA319F0E7C60059A7E9 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		5E50F4DE1A15D44500BBE616 /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
+		5E50F4E01A15E90800BBE616 /* JobDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDescriptionViewController.swift; sourceTree = "<group>"; };
+		5E50F4E21A15EAEB00BBE616 /* JobDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDescription.swift; sourceTree = "<group>"; };
 		6D3DE2A045B5411D89E40B37 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DA8C94DF5F717C3073F47A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CA2127F31F1DC162303FF1DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				5E415BA119F0DD8A0059A7E9 /* Interview.swift */,
 				5E415BA319F0E7C60059A7E9 /* ParseClient.swift */,
 				5E3DE4AE1A15666F00858AAC /* User.swift */,
+				5E50F4E21A15EAEB00BBE616 /* JobDescription.swift */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				5E3DE4A51A15610900858AAC /* NotesViewController.swift */,
 				5E3DE4A91A1561F100858AAC /* views */,
 				5E50F4DE1A15D44500BBE616 /* NoteEditViewController.swift */,
+				5E50F4E01A15E90800BBE616 /* JobDescriptionViewController.swift */,
 			);
 			path = interview;
 			sourceTree = "<group>";
@@ -334,7 +340,9 @@
 				5E3DE4A81A1561E500858AAC /* NotesCell.swift in Sources */,
 				5E415BA419F0E7C60059A7E9 /* ParseClient.swift in Sources */,
 				5E50F4DF1A15D44500BBE616 /* NoteEditViewController.swift in Sources */,
+				5E50F4E31A15EAEB00BBE616 /* JobDescription.swift in Sources */,
 				5E415BA219F0DD8A0059A7E9 /* Interview.swift in Sources */,
+				5E50F4E11A15E90800BBE616 /* JobDescriptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,6 +50,8 @@ class ParseClient {
     
     class func getNextInterview(success: Interview! -> (), failure: (NSError -> ())? = nil) {
         let query = PFQuery(className: "Interview")
+        query.whereKey("interviewer", containedIn: [PFUser(withoutDataWithObjectId: User.current.pfObject.objectId)])
+        query.includeKey("jobDescription")
         //TODO Get next upcoming interview for today instead of first object
         query.getFirstObjectInBackgroundWithBlock { (obj: PFObject!, error: NSError!) -> () in
             self.handleObjectResponse(obj, error: error, success: success, failure: failure) {Interview(parseObject: $0)}

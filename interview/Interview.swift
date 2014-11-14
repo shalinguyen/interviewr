@@ -10,10 +10,12 @@ import UIKit
 
 class Interview: NSObject {
     
+    var jobDescription: JobDescription
+    
     var id: String {return pfObject.objectId}
     var intervieweeName: String {return pfObject.objectForKey("intervieweeName") as String}
     var linkedinUrl: String? {return pfObject.objectForKey("linkedinUrl") as? String}
-    var position: String {return pfObject.objectForKey("position") as String}
+    var position: String {return jobDescription.title}
     var topic: String {return pfObject.objectForKey("topic") as String}
     var startDate: NSDate {return pfObject.objectForKey("startDate") as NSDate}
     var endDate: NSDate {return pfObject.objectForKey("endDate") as NSDate}
@@ -23,5 +25,6 @@ class Interview: NSObject {
     
     init(parseObject: PFObject) {
         pfObject = parseObject
+        jobDescription = JobDescription(parseObject: parseObject.objectForKey("jobDescription") as PFObject)
     }
 }

@@ -265,7 +265,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qnH-VA-c1D" kind="show" id="TVf-8J-2se"/>
+                                    <segue destination="qnH-VA-c1D" kind="show" identifier="jobDescription" id="TVf-8J-2se"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Experience Designer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Il-9N-kKu">
@@ -414,7 +414,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NoT-I6-pIX">
                                         <rect key="frame" x="16" y="83" width="340" height="575"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Think about impacting 1 out of every 2 people online--in innovative and imaginative ways that are uniquely Yahoo. We do just that each and every day, and you could too. It's big thinkers like you who will create the next generation of experiences for customers, globally. Now's the time to show the world what you've got. Put your ideas to work for over half a billion people. 
+                                        <mutableString key="text">Think about impacting 1 out of every 2 people online--in innovative and imaginative ways that are uniquely Yahoo. We do just that each and every day, and you could too. It's big thinkers like you who will create the next generation of experiences for customers, globally. Now's the time to show the world what you've got. Put your ideas to work for over half a billion people. 
 
 The Advertising User Experience (AdUX) group at Yahoo conceptualizes, designs and prototypes next generation ad products across all screens and Yahoo's networks. We also design platform tools that enable the production of rich, responsive and personalized display creatives at scale. We work in concert with UX Research to validate our explorations.   A comfort level with front-end development practices and frameworks 
 
@@ -426,7 +426,7 @@ Portfolio utilizes HTML5 CSS3 and shows working knowledge in jQuery or other Jav
 
 Candidate has leveraged bootstrap or other CSS library 
 
-Candidate has a codepen or github account (or similar) with active projects</string>
+Candidate has a codepen or github account (or similar) with active projects</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
