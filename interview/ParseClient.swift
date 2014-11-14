@@ -13,7 +13,7 @@ class ParseClient {
     private class func handleObjectResponse<O, T>(obj: O!, error: NSError!, success: T! -> (), failure: (NSError -> ())?, deserialize: O -> T) {
         if (obj != nil) {
             success(deserialize(obj))
-        } else if (error != nil) {
+        } else if (error == nil) {
             success(nil)
         } else {
             println(error)
@@ -27,9 +27,20 @@ class ParseClient {
         if (objs != nil) {
             println("\(objs.count) item(s) returned")
             success(objs.map({deserialize($0)}))
-        } else if (error != nil) {
+        } else if (error == nil) {
             success([])
         } else {
+            println(error)
+            if (failure != nil) {
+                failure!(error)
+            }
+        }
+    }
+    
+    private class func handleSaveResponse(successful: Bool, error: NSError!, success: () -> (), failure: (NSError -> ())?) {
+        if (successful) {
+            success()
+        } else if (error != nil) {
             println(error)
             if (failure != nil) {
                 failure!(error)
@@ -66,6 +77,12 @@ class ParseClient {
         query.includeKey("createdBy")
         query.findObjectsInBackgroundWithBlock { (objs: [AnyObject]!, error: NSError!) -> Void in
             self.handleObjectResponse(objs, error: error, success: success, failure: failure) {Note(parseObject: $0 as PFObject)}
+        }
+    }
+    
+    class func saveNote(note: Note, success: () -> (), failure: (NSError -> ())? = nil) {
+        note.pfObject.saveInBackgroundWithBlock { (successful: Bool, error: NSError!) -> Void in
+            self.handleSaveResponse(successful, error: error, success: success, failure: failure)
         }
     }
 }

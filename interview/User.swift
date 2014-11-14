@@ -13,35 +13,17 @@ var _currentUserKey = "currentUser"
 
 class User: NSObject {
     
-    var id: String
-    var username: String
-    var firstName: String
-    var lastName: String
-    var email: String
-    
+    var id: String {return pfObject.objectId}
+    var username: String {return pfObject.objectForKey("username") as String}
+    var firstName: String {return pfObject.objectForKey("firstName") as String}
+    var lastName: String {return pfObject.objectForKey("lastName") as String}
     var name: String {return "\(firstName) \(lastName)"}
+    var email: String {return pfObject.objectForKey("email") as String}
     
-    var dictionary: NSDictionary //For serializing to local storage
+    var pfObject: PFObject
     
     init(parseObject: PFObject) {
-        id = parseObject.objectId
-        username = parseObject.objectForKey("username") as String
-        firstName = parseObject.objectForKey("firstName") as String
-        lastName = parseObject.objectForKey("lastName") as String
-        email = parseObject.objectForKey("email") as String
-        
-        var d = parseObject.dictionaryWithValuesForKeys(parseObject.allKeys())
-        d["objectId"] = id
-        dictionary = d
-    }
-    
-    private init(dictionary: NSDictionary) {
-        self.dictionary = dictionary
-        id = dictionary["objectId"] as String
-        username = dictionary["username"] as String
-        firstName = dictionary["firstName"] as String
-        lastName = dictionary["lastName"] as String
-        email = dictionary["email"] as String
+        pfObject = parseObject
     }
     
     class var current: User! {
@@ -50,14 +32,22 @@ class User: NSObject {
                 let data = NSUserDefaults.standardUserDefaults().objectForKey(_currentUserKey) as? NSData
                 if (data != nil) {
                     let dictionary = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: nil) as NSDictionary
-                    _currentUser = User(dictionary: dictionary)
+                    let parseObject = PFUser()
+                    parseObject.setValuesForKeysWithDictionary(dictionary)
+                    parseObject.objectId = dictionary["objectId"] as String
+                    _currentUser = User(parseObject: parseObject)
                 }
             }
             return _currentUser
         }
         set(user) {
             _currentUser = user
-            let data = user != nil ? NSJSONSerialization.dataWithJSONObject(user!.dictionary, options: nil, error: nil) : nil
+            func dictionary(user: User) -> NSDictionary {
+                var d = user.pfObject.dictionaryWithValuesForKeys(user.pfObject.allKeys())
+                d["objectId"] = user.id
+                return d
+            }
+            let data = user != nil ? NSJSONSerialization.dataWithJSONObject(dictionary(user), options: nil, error: nil) : nil
             NSUserDefaults.standardUserDefaults().setObject(data, forKey: _currentUserKey)
             NSUserDefaults.standardUserDefaults().synchronize()
         }

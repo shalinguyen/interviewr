@@ -21,4 +21,12 @@ class Note: NSObject {
         pfObject = parseObject
         createdBy = User(parseObject: parseObject.objectForKey("createdBy") as PFObject)
     }
+    
+    convenience init(interview: Interview, content: String) {
+        self.init(parseObject: PFObject(className: "Note", dictionary: [
+            "interview": PFObject(withoutDataWithClassName: "Interview", objectId: interview.pfObject.objectId),
+            "content": content,
+            "createdBy": PFUser(withoutDataWithObjectId: User.current.pfObject.objectId)
+        ]))
+    }
 }
