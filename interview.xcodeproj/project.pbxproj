@@ -14,6 +14,7 @@
 		5E3DE4AF1A15666F00858AAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DE4AE1A15666F00858AAC /* User.swift */; };
 		5E415BA219F0DD8A0059A7E9 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E415BA119F0DD8A0059A7E9 /* Interview.swift */; };
 		5E415BA419F0E7C60059A7E9 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E415BA319F0E7C60059A7E9 /* ParseClient.swift */; };
+		F2F38F821A15A9A50088C68B /* PhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F38F811A15A9A50088C68B /* PhotosController.swift */; };
 		F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793C19E7A4FA0054E757 /* AppDelegate.swift */; };
 		F751793F19E7A4FA0054E757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793E19E7A4FA0054E757 /* ViewController.swift */; };
 		F751794219E7A4FA0054E757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F751794019E7A4FA0054E757 /* Main.storyboard */; };
@@ -33,7 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		38AEAD85984D457FAC0F1545 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		5E3DE4A51A15610900858AAC /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		5E3DE4A71A1561E500858AAC /* NotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
 		5E3DE4AA1A15642700858AAC /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -42,6 +42,9 @@
 		5E415BA119F0DD8A0059A7E9 /* Interview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
 		5E415BA319F0E7C60059A7E9 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		6D3DE2A045B5411D89E40B37 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5DA8C94DF5F717C3073F47A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CA2127F31F1DC162303FF1DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F2F38F811A15A9A50088C68B /* PhotosController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosController.swift; sourceTree = "<group>"; };
 		F751793719E7A4FA0054E757 /* interview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = interview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F751793B19E7A4FA0054E757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F751793C19E7A4FA0054E757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				5E3DE4A71A1561E500858AAC /* NotesCell.swift */,
+				F2F38F811A15A9A50088C68B /* PhotosController.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -100,14 +104,23 @@
 			name = api;
 			sourceTree = "<group>";
 		};
+		B59D3704C13D8ED87C08E951 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA2127F31F1DC162303FF1DC /* Pods.debug.xcconfig */,
+				B5DA8C94DF5F717C3073F47A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F751792E19E7A4FA0054E757 = {
 			isa = PBXGroup;
 			children = (
 				F751793919E7A4FA0054E757 /* interview */,
 				F751794F19E7A4FA0054E757 /* interviewTests */,
 				F751793819E7A4FA0054E757 /* Products */,
-				38AEAD85984D457FAC0F1545 /* Pods.xcconfig */,
 				3CF66726BB504C16BC809332 /* Frameworks */,
+				B59D3704C13D8ED87C08E951 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,7 +285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C003CC69510A4878B6BE8555 /* Check Pods Manifest.lock */ = {
@@ -300,6 +313,7 @@
 				F751793F19E7A4FA0054E757 /* ViewController.swift in Sources */,
 				5E3DE4A61A15610900858AAC /* NotesViewController.swift in Sources */,
 				5E3DE4AB1A15642700858AAC /* Note.swift in Sources */,
+				F2F38F821A15A9A50088C68B /* PhotosController.swift in Sources */,
 				F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */,
 				5E3DE4AF1A15666F00858AAC /* User.swift in Sources */,
 				5E3DE4A81A1561E500858AAC /* NotesCell.swift in Sources */,
@@ -425,7 +439,7 @@
 		};
 		F751795719E7A4FA0054E757 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38AEAD85984D457FAC0F1545 /* Pods.xcconfig */;
+			baseConfigurationReference = CA2127F31F1DC162303FF1DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -439,7 +453,7 @@
 		};
 		F751795819E7A4FA0054E757 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38AEAD85984D457FAC0F1545 /* Pods.xcconfig */;
+			baseConfigurationReference = B5DA8C94DF5F717C3073F47A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
