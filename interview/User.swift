@@ -19,20 +19,23 @@ class User: NSObject {
     var lastName: String
     var email: String
     
-    var dictionary: NSDictionary
+    var dictionary: NSDictionary //For serializing to local storage
     
     init(parseObject: PFObject) {
-        dictionary = parseObject.dictionaryWithValuesForKeys(parseObject.allKeys())
-        id = parseObject.objectForKey("id") as String
+        id = parseObject.objectId
         username = parseObject.objectForKey("username") as String
         firstName = parseObject.objectForKey("firstName") as String
         lastName = parseObject.objectForKey("lastName") as String
         email = parseObject.objectForKey("email") as String
+        
+        var d = parseObject.dictionaryWithValuesForKeys(parseObject.allKeys())
+        d["objectId"] = id
+        dictionary = d
     }
     
     private init(dictionary: NSDictionary) {
         self.dictionary = dictionary
-        id = dictionary["id"] as String
+        id = dictionary["objectId"] as String
         username = dictionary["username"] as String
         firstName = dictionary["firstName"] as String
         lastName = dictionary["lastName"] as String

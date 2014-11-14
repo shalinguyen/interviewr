@@ -25,6 +25,7 @@ class ParseClient {
     
     private class func handleObjectResponse<O, T>(objs: [O]!, error: NSError!, success: [T] -> (), failure: (NSError -> ())?, deserialize: O -> T) {
         if (objs != nil) {
+            println("\(objs.count) item(s) returned")
             success(objs.map({deserialize($0)}))
         } else if (error != nil) {
             success([])
@@ -59,9 +60,9 @@ class ParseClient {
         }
     }
     
-    class func getNotesByUser(userId: String, success: [Note] -> (), failure: (NSError -> ())? = nil) {
+    class func getNotesByInterview(interview: Interview, success: [Note] -> (), failure: (NSError -> ())? = nil) {
         let query = PFQuery(className: "Note")
-        query.whereKey("createdById", equalTo: userId)
+        query.whereKey("interview", equalTo: interview.id)
         query.findObjectsInBackgroundWithBlock { (objs: [AnyObject]!, error: NSError!) -> Void in
             self.handleObjectResponse(objs, error: error, success: success, failure: failure) {Note(parseObject: $0 as PFObject)}
         }

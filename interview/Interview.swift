@@ -10,6 +10,7 @@ import UIKit
 
 class Interview: NSObject {
     
+    var id: String
     var intervieweeName: String
     var linkedinUrl: String?
     var position: String
@@ -19,6 +20,7 @@ class Interview: NSObject {
     var location: String?
     
     init(parseObject: PFObject) {
+        id = parseObject.objectId
         intervieweeName = parseObject.objectForKey("intervieweeName") as String
         linkedinUrl = parseObject.objectForKey("linkedinUrl") as? String
         position = parseObject.objectForKey("position") as String
