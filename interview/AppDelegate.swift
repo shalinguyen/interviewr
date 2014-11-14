@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.setApplicationId("2CluPmhmLoT8Y8hhJpbtwZz4XXooSj5gpHdrWbkC", clientKey: "FAZqFDL2ccmVZsDDh6lVSkctOKPSKKmDdmZ9MQke")
+        //TODO Remove this when login flow is complete
+        let dummyUser = PFObject(className: "User", dictionary: [
+            "username": "bpon",
+            "firstName": "Bryan",
+            "lastName": "Pon",
+            "email": "bpon@yahoo-inc.com"
+        ])
+        dummyUser.objectId = "Oi45JDq50f"
+        User.current = User(parseObject: dummyUser)
         return true
     }
 

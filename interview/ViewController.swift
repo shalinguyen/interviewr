@@ -27,6 +27,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         ParseClient.getNextInterview {interview in
+            self.interview = interview
             self.positionLabel.text = interview.position
             self.topicLabel.text = interview.topic
             self.locationLabel.text = interview.location
@@ -47,6 +48,11 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "notes") {
+            let vc = (segue.destinationViewController as UINavigationController).childViewControllers[0] as NotesViewController
+            vc.interview = interview
+        }
+    }
 }
 

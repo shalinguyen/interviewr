@@ -12,12 +12,20 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
+    var interview: Interview!
+    var notes: [Note] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        ParseClient.getNotesByInterview(interview) {(notes: [Note]) -> () in
+            self.notes = notes
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,15 +34,16 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let note = notes[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("NotesCell") as NotesCell
         cell.dateCreatedLabel.text = "owiejowi"
-        cell.titleLabel.text = "asfjwe"
+        cell.titleLabel.text = note.content
         cell.createdByLabel.text = "wefijwo"
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return notes.count
     }
 
     /*

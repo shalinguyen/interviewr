@@ -16,6 +16,6 @@ class Note: NSObject {
     
     init(parseObject: PFObject) {
         content = parseObject.objectForKey("content") as String
-        dateCreated = parseObject.objectForKey("dateCreated") as NSDate
+        dateCreated = parseObject.createdAt as NSDate
     }
 }
