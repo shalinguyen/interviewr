@@ -10,12 +10,19 @@ import UIKit
 
 class JobDescriptionViewController: UIViewController {
 
+    var jobDescription: JobDescription!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var organizationLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        titleLabel.text = jobDescription.title
+        organizationLabel.text = jobDescription.organization
+        descriptionLabel.text = jobDescription.descriptionText
     }
 
     override func didReceiveMemoryWarning() {

@@ -386,7 +386,7 @@
         <!--Job Description-->
         <scene sceneID="kiW-sg-W9O">
             <objects>
-                <viewController id="OdD-T2-5rg" sceneMemberID="viewController">
+                <viewController id="OdD-T2-5rg" customClass="JobDescriptionViewController" customModule="interview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wF7-Vb-xy5"/>
                         <viewControllerLayoutGuide type="bottom" id="mkg-Ah-ONm"/>
@@ -414,7 +414,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NoT-I6-pIX">
                                         <rect key="frame" x="16" y="83" width="340" height="575"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">Think about impacting 1 out of every 2 people online--in innovative and imaginative ways that are uniquely Yahoo. We do just that each and every day, and you could too. It's big thinkers like you who will create the next generation of experiences for customers, globally. Now's the time to show the world what you've got. Put your ideas to work for over half a billion people. 
+                                        <string key="text">Think about impacting 1 out of every 2 people online--in innovative and imaginative ways that are uniquely Yahoo. We do just that each and every day, and you could too. It's big thinkers like you who will create the next generation of experiences for customers, globally. Now's the time to show the world what you've got. Put your ideas to work for over half a billion people. 
 
 The Advertising User Experience (AdUX) group at Yahoo conceptualizes, designs and prototypes next generation ad products across all screens and Yahoo's networks. We also design platform tools that enable the production of rich, responsive and personalized display creatives at scale. We work in concert with UX Research to validate our explorations.   A comfort level with front-end development practices and frameworks 
 
@@ -426,7 +426,7 @@ Portfolio utilizes HTML5 CSS3 and shows working knowledge in jQuery or other Jav
 
 Candidate has leveraged bootstrap or other CSS library 
 
-Candidate has a codepen or github account (or similar) with active projects</mutableString>
+Candidate has a codepen or github account (or similar) with active projects</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -443,6 +443,11 @@ Candidate has a codepen or github account (or similar) with active projects</mut
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="NoT-I6-pIX" id="KNp-Wq-bPU"/>
+                        <outlet property="organizationLabel" destination="1d8-P1-G8q" id="XOf-aV-reY"/>
+                        <outlet property="titleLabel" destination="dVd-Ie-NCi" id="yd1-aj-AJx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAA-80-jgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

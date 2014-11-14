@@ -49,9 +49,15 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "notes") {
-            let vc = (segue.destinationViewController as UINavigationController).childViewControllers[0] as NotesViewController
-            vc.interview = interview
+        func nextViewController() -> AnyObject {
+            return (segue.destinationViewController as UINavigationController).childViewControllers[0]
+        }
+        switch (segue.identifier) {
+        case "notes":
+            (nextViewController() as NotesViewController).interview = interview
+        case "jobDescription":
+            (nextViewController() as JobDescriptionViewController).jobDescription = interview.jobDescription
+        default: break
         }
     }
 }
