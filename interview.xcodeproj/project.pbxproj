@@ -22,6 +22,7 @@
 		5E50F4E71A15FF3800BBE616 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E61A15FF3800BBE616 /* Candidate.swift */; };
 		5E50F4E91A16067800BBE616 /* InterviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4E81A16067800BBE616 /* InterviewCell.swift */; };
 		5E50F4ED1A16075300BBE616 /* UpcomingInterviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50F4EC1A16075300BBE616 /* UpcomingInterviewsViewController.swift */; };
+		F2955D351A166BB3006E7BEB /* NewIntervieweeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2955D341A166BB3006E7BEB /* NewIntervieweeViewController.swift */; };
 		F2F38F821A15A9A50088C68B /* PhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F38F811A15A9A50088C68B /* PhotosController.swift */; };
 		F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793C19E7A4FA0054E757 /* AppDelegate.swift */; };
 		F751793F19E7A4FA0054E757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751793E19E7A4FA0054E757 /* ViewController.swift */; };
@@ -60,6 +61,7 @@
 		6D3DE2A045B5411D89E40B37 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DA8C94DF5F717C3073F47A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CA2127F31F1DC162303FF1DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F2955D341A166BB3006E7BEB /* NewIntervieweeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewIntervieweeViewController.swift; sourceTree = "<group>"; };
 		F2F38F811A15A9A50088C68B /* PhotosController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosController.swift; sourceTree = "<group>"; };
 		F751793719E7A4FA0054E757 /* interview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = interview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F751793B19E7A4FA0054E757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		F751793919E7A4FA0054E757 /* interview */ = {
 			isa = PBXGroup;
 			children = (
+				F2955D341A166BB3006E7BEB /* NewIntervieweeViewController.swift */,
 				5E013E5D1A15B7980095434B /* utils */,
 				5E415BA019F0DD4C0059A7E9 /* api */,
 				F751793C19E7A4FA0054E757 /* AppDelegate.swift */,
@@ -353,6 +356,7 @@
 				F751793D19E7A4FA0054E757 /* AppDelegate.swift in Sources */,
 				5E3DE4AF1A15666F00858AAC /* User.swift in Sources */,
 				5E3DE4A81A1561E500858AAC /* NotesCell.swift in Sources */,
+				F2955D351A166BB3006E7BEB /* NewIntervieweeViewController.swift in Sources */,
 				5E415BA419F0E7C60059A7E9 /* ParseClient.swift in Sources */,
 				5E50F4E91A16067800BBE616 /* InterviewCell.swift in Sources */,
 				5E50F4DF1A15D44500BBE616 /* NoteEditViewController.swift in Sources */,

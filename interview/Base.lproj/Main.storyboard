@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hhl-bO-egf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hhl-bO-egf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--New Interviewee-->
         <scene sceneID="meh-8o-XNk">
             <objects>
-                <viewController id="lY2-Pg-K58" sceneMemberID="viewController">
+                <viewController id="lY2-Pg-K58" customClass="NewIntervieweeViewController" customModule="interview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J7u-Qm-K9x"/>
                         <viewControllerLayoutGuide type="bottom" id="ot4-cT-EK3"/>
@@ -62,17 +62,24 @@
                                 <rect key="frame" x="0.0" y="267" width="375" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aLQ-TS-6GM">
-                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="437644427.55880201">
-                                    <!--2014-11-14 07:53:47 +0000-->
-                                </date>
-                            </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Interview Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-5u-nw9">
                                 <rect key="frame" x="16" y="225" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="interviewTimeEditingChanged:" destination="lY2-Pg-K58" eventType="editingDidEnd" id="m5o-UX-f26"/>
+                                    <action selector="interviewTimeEditingChanged:" destination="lY2-Pg-K58" eventType="editingDidBegin" id="tq5-SN-v0B"/>
+                                </connections>
                             </textField>
+                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="aLQ-TS-6GM">
+                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="437644427.55880201">
+                                    <!--2014-11-14 07:53:47 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="interviewTimeDatePickerValueChanged:" destination="lY2-Pg-K58" eventType="valueChanged" id="VZe-0g-rNh"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -80,6 +87,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="6b1-dY-Fgp"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="interviewTimeDatePicker" destination="aLQ-TS-6GM" id="TnR-hq-ueS"/>
+                        <outlet property="interviewTimeLabel" destination="pIS-5u-nw9" id="hcw-nT-JVt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URc-KQ-tqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
